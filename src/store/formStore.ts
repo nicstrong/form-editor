@@ -21,6 +21,9 @@ export function addNewElement(
       prev.push(createRow())
       rowIndex = 0
     }
+    if (rowIndex >= prev.length) {
+      prev.push(createRow())
+    }
     // add the element to end of row
     prev[rowIndex].elements.push(createElement(itemTemplate, prev))
     redistributeCols(prev[rowIndex])
